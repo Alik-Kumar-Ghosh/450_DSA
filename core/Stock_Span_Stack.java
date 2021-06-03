@@ -14,7 +14,7 @@ public class Stock_Span_Stack {
         st.push(0);
         span[0]=1;
         for (int i = 1; i < n; i++) {
-            while (st.size()>0&&arr[i]>st.peek()){
+            while (st.size()>0&&arr[i]>=arr[st.peek()]){
                 st.pop();
             }
             if(st.size()==0){
