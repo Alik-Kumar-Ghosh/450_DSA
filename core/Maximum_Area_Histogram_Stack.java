@@ -11,7 +11,7 @@ public class Maximum_Area_Histogram_Stack {
         }
         int nsl[]=new int[n];
         Stack<Integer> st  = new Stack<>();
-        st.push(arr[0]);
+        st.push(0);
         nsl[0]=-1;
         for (int i = 1; i <n ; i++) {
             while (st.size()!=0&&arr[i]<arr[st.peek()]){
@@ -24,9 +24,7 @@ public class Maximum_Area_Histogram_Stack {
                 nsl[i]=st.peek();
             st.push(i);
         }
-        while (st.empty()){
-            st.pop();
-        }
+        st = new Stack<>();
         st.push(n-1);
         int nsr[]=new int[n];
         nsr[n-1]= arr.length;
