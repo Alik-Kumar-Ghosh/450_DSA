@@ -10,10 +10,12 @@ public class Lowest_common_ancestor_LCA {
             // Your code here
             if(root ==null)
                 return null;
+            //it will trigger when the value matches
             if(root.data==n1||root.data==n2)
                 return root;
             Node lans=lca(root.left,n1,n2);
             Node rans=lca(root.right,n1,n2);
+            //if the nodes that is retuned matches then will make this as answer.
             if(lans!=null&&rans!=null)
                 return root;
             else if(lans!=null&&rans==null)
